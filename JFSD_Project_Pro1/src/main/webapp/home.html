@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page - Indian Constitution </title>
+
+    <!-- Inline CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            text-align: center;
+            background-color: #333;
+            padding: 20px;
+        }
+
+        .header__title {
+            color: white;
+            font-size: 36px;
+        }
+
+        .header__img img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .overview {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            fill: #333;
+        }
+
+        .tabs {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .tabs li {
+            margin: 0;
+        }
+
+        .tabs a {
+            display: block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .tabs a.is-active {
+            background-color: #555;
+        }
+
+        .tabs-pane {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .tabs-pane.is-active {
+            display: block;
+        }
+
+        .detail {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SVG Defs -->
+    <svg xmlns="http://www.w3.org/2000/svg" hidden>
+        <symbol id="emblem">
+            <title>Indian Constitution </title>
+            <path d="M44.13..." fill-rule="evenodd"/>
+        </symbol>
+    </svg>
+    <!-- SVG Defs -->
+
+    <!-- Header -->
+    <header role="banner" class="header">
+        <h1 class="header__title">Indian Constitution </h1>
+        <div class="header__img">
+            <img 
+                srcset="images/ind3.png
+                    "
+                sizes ="(min-width:1336px) 75vw, 50vw"
+                alt="Indian Constitution">
+        </div>
+    </header>
+    <!-- Header -->
+
+    <!-- Introduction -->
+    <div class="container">
+        <p class="overview">The Indian Constitution is the supreme legal document of India. It outlines the framework of government, defines the rights and duties of citizens, and establishes the relationship between the central government and the states. It was adopted on November 26, 1949, and came into effect on January 26, 1950.</p>
+    </div>
+    <!-- Introduction -->
+
+    <!-- Divider -->
+    <div class="divider">
+        <svg class="icon" viewBox="0 0 50 50">
+            <use xlink:href="#emblem"></use>
+        </svg>
+    </div>
+    <!-- Divider -->
+
+    <!-- Main -->
+    <main class="main" role="main">
+        <section class="container">
+            <ul data-tabs class="tabs">
+                <li><a href="#design" class="is-active" data-tab>Design</a></li>
+                <li><a href="#armaments" data-tab>Creation</a></li>
+                <li><a href="#power" data-tab>Power</a></li>
+            </ul>
+
+            <ul data-tabs-content>
+                <!-- Design -->
+                <li id="design" class="tabs-pane is-active" data-tabs-pane>
+                    <p>The web is design by small team of students</p>
+                </li>
+                <!-- Armaments -->
+                <li id="armaments" class="tabs-pane" data-tabs-pane>
+                    <p>The Indian Constitution was adopted on November 26, 1949, and came into effect on January 26, 1950</p>
+                </li>
+                <!-- Power -->
+                <li id="power" class="tabs-pane" data-tabs-pane>
+                    <p>It has highest power</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        // JavaScript for switching between tabs
+        document.querySelectorAll('[data-tab]').forEach(tab => {
+            tab.addEventListener('click', function(event) {
+                event.preventDefault();
+                
+                // Remove active class from all tabs
+                document.querySelectorAll('[data-tab]').forEach(t => t.classList.remove('is-active'));
+                document.querySelectorAll('[data-tabs-pane]').forEach(pane => pane.classList.remove('is-active'));
+
+                // Add active class to the clicked tab and its corresponding pane
+                tab.classList.add('is-active');
+                const targetPane = document.querySelector(tab.getAttribute('href'));
+                targetPane.classList.add('is-active');
+            });
+        });
+
+        // Redirect to home page after login or registration
+        function redirectToHome() {
+            window.location.href = "home.html";  // Make sure to adjust the file path as needed
+        }
+
+        // Simulate a login or registration action
+        // These functions would be linked to your actual login/registration logic
+        function login() {
+            // Perform login operation
+            redirectToHome();  // Redirect to home page after login
+        }
+
+        function register() {
+            // Perform registration operation
+            redirectToHome();  // Redirect to home page after registration
+        }
+    </script>
+</body>
+</html>
