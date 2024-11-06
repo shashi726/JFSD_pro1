@@ -6,3 +6,5 @@ Create a platform to educate users about the Indian Contiution, including its fr
 2) Educator: Create educational content, conduct interactive session, and provide insights.
 3) Citizen: Explore content, participate in discussions, and engage with educational resources.
 4) Legal Expert: Offer legal insights, update constitutional content, and provide guidance.
+
+*** note:- The above project is school project ***
